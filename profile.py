@@ -135,6 +135,8 @@ for i in range(params.nodeCount):
             fslink.best_effort = True
             fslink.vlan_tagging = True
         pass
+    # increase root partition size
+    node.Attribute('XEN_EXTRAFS','50')
     if params.osImage and params.osImage != "default":
         node.disk_image = params.osImage
         pass
